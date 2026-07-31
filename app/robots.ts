@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://shelembe.co.za/sitemap.xml',
+    sitemap: 'https://shelembe-studios-website.vercel.app/sitemap.xml',
   };
 }
