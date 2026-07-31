@@ -55,9 +55,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <head>
-        <script
-          type="application/ld+json"
+ <head>
+  <meta
+    name="google-site-verification"
+    content="aAgdWKSQ1UFWKnE1yCccLSjsGI6fROlDDjUc7KmXkwk"
+  />
+
+  <script
+    type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
