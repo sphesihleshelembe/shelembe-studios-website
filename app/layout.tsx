@@ -4,6 +4,7 @@ import './globals.css';
 import { Navbar } from '@/components/site/navbar';
 import { Footer } from '@/components/site/footer';
 import { ScrollProgress } from '@/components/site/scroll-progress';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 
@@ -76,6 +77,18 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans">
+      <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-BPTBKBXGND"
+  strategy="afterInteractive"
+/>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BPTBKBXGND');
+  `}
+</Script>
         <ScrollProgress />
         <Navbar />
         <main>{children}</main>
