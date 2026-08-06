@@ -24,7 +24,7 @@ const cvbuilderFeatures = [
   { icon: Cloud, label: 'Secure Cloud Storage' },
   { icon: Star, label: 'CV Completion Score' },
   { icon: Scan, label: 'Easy Editing' },
-  { icon: Layout, label: 'Responsive Interface' },
+  { icon: Layout, label: 'User-Friendly Interface' },
   { icon: Shield, label: 'User Authentication' },
 ];
 
@@ -54,8 +54,8 @@ export function Products() {
               description="Noviq is a professional mobile document scanner designed for productivity and document management. Turn your phone into a powerful scanning workstation."
               features={noviqFeatures}
               image="https://images.pexels.com/photos/3850201/pexels-photo-3850201.jpeg?auto=compress&cs=tinysrgb&w=900"
-              status="Available Now"
-              statusColor="success"
+              status="Coming Soon"
+              statusColor="warning"
               buttons={[
                 { label: 'Learn More', href: '/#portfolio', primary: false },
                 { label: 'Download', href: '#', primary: true, comingSoon: true },
@@ -67,15 +67,19 @@ export function Products() {
           <Reveal delay={0.15}>
             <ProductCard
               name="CVBuilder"
-              tagline="Cloud-powered CV creation platform"
-              description="CVBuilder is a cloud-powered CV and résumé creation platform designed to help job seekers create professional CVs quickly and easily."
+              tagline="Professional CV & Resume Builder"
+              description="CVBuilder helps job seekers create professional CVs and resumes in minutes. Choose from modern templates, edit your information, manage multiple CVs, and export high-quality PDFs directly from your Android device."
               features={cvbuilderFeatures}
-              image="https://images.pexels.com/photos/590044/pexels-photo-590044.jpeg?auto=compress&cs=tinysrgb&w=900"
-              status="Available Now"
+              image="/images/products/cvbuilder_banner.png"
+              status="Live on Google Play"
               statusColor="success"
               buttons={[
                 { label: 'Learn More', href: '/#portfolio', primary: false },
-                { label: 'Download', href: '#', primary: true, comingSoon: true },
+{
+  label: 'Get it on Google Play',
+  href: 'https://play.google.com/store/apps/details?id=com.sphesihleshelembe.cvbuilder',
+  primary: true,
+},
               ]}
             />
           </Reveal>
@@ -138,6 +142,17 @@ function ProductCard({
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
           {description}
         </p>
+        {name === "CVBuilder" && (
+  <Link
+    href="https://play.google.com/store/apps/details?id=com.sphesihleshelembe.cvbuilder"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-4 inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3 py-1.5 text-sm font-medium text-green-700 transition hover:bg-green-100"
+  >
+    <CheckCircle2 className="h-4 w-4" />
+    Published on Google Play
+  </Link>
+)}
 
         <div className="mt-5 grid grid-cols-2 gap-2">
           {features.map((feature) => (
