@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
                 You can request access to, correction of, or deletion of your
                 personal data at any time. To unsubscribe from our newsletter,
                 use the unsubscribe link in any email we send. Contact us at
-                hello@shelembe.co.za for any privacy-related requests.
+                sphesihleshelembe12@gmail.com for any privacy-related requests.
               </p>
             </Section>
 
