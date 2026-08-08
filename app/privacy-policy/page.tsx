@@ -59,14 +59,30 @@ export default function PrivacyPolicyPage() {
               </p>
             </Section>
 
-            <Section title="Product Data">
-              <p>
-                Our products are designed to be privacy-first. Noviq Document
-                Scanner processes documents on your device wherever possible.
-                We do not upload your scanned documents to our servers without
-                your explicit consent.
-              </p>
-            </Section>
+<Section title="Noviq Document Scanner">
+  <p>
+    Noviq Document Scanner allows you to scan documents, create PDFs,
+    extract text using OCR, scan and generate QR codes, and manage
+    documents on your device.
+  </p>
+
+  <p>
+    Documents and images processed by Noviq are stored locally on your
+    device unless you explicitly choose to share or export them using
+    another service or location.
+  </p>
+
+  <p>
+    Noviq does not upload your scanned documents to Shelembe Studios
+    servers for storage or processing.
+  </p>
+
+  <p>
+    Camera access is used for document scanning and QR code scanning.
+    Photo and file access may be used when you choose to import images
+    or documents from your device.
+  </p>
+</Section>
 
             <Section title="Changes to This Policy">
               <p>
@@ -78,7 +94,7 @@ export default function PrivacyPolicyPage() {
             <Section title="Contact Us">
               <p>
                 If you have any questions about this Privacy Policy, please
-                contact us at hello@shelembe.co.za.
+                contact us at sphesihleshelembe12@gmail.com
               </p>
             </Section>
           </div>
