@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://shelembe.co.za'),
+  alternates: {
+  canonical: '/',
+},
   title: {
     default: 'Shelembe Studios | Free CV Builder & Software Solutions',
     template: '%s — Shelembe Studios',
@@ -33,20 +36,22 @@ keywords: [
 ],
   authors: [{ name: 'Shelembe Studios' }],
   creator: 'Shelembe Studios',
-  openGraph: {
-    title: 'Shelembe Studios — Building Software That Solves Real Problems',
-    description:
-      'An independent software company building practical, beautiful, and privacy-conscious software for students, professionals, and businesses.',
+openGraph: {
+  title: 'Shelembe Studios | Free CV Builder & Software Solutions',
+  description:
+    'Shelembe Studios builds practical software including CVBuilder, a free CV maker for creating professional CVs, plus productivity tools for students, professionals, and businesses.',
+    url: 'https://shelembe-studios-website-16cn2zrnc.vercel.app/',
     type: 'website',
     locale: 'en_ZA',
     siteName: 'Shelembe Studios',
+    images: ['/og-image.png'],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Shelembe Studios — Building Software That Solves Real Problems',
-    description:
-      'An independent software company building practical, beautiful, and privacy-conscious software.',
-  },
+twitter: {
+  card: 'summary_large_image',
+  title: 'Shelembe Studios | Free CV Builder & Software Solutions',
+  description:
+    'Shelembe Studios builds practical software including CVBuilder, a free CV maker for creating professional CVs, plus productivity tools for students, professionals, and businesses.',
+},
   robots: {
     index: true,
     follow: true,
@@ -71,11 +76,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'SoftwareApplication',
+              '@type': 'Organisation',
               name: 'Shelembe Studios',
               description:
-                'An independent software company building practical software that improves productivity.',
-              url: 'https://shelembe.co.za',
+  'Shelembe Studios builds practical software including CVBuilder, a free CV maker, and productivity tools for students, professionals, and businesses.',
+              url: 'https://shelembe-studios-website-16cn2zrnc.vercel.app/',
             }),
           }}
         />
