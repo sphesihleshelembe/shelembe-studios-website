@@ -67,9 +67,8 @@ export function Products() {
           <Reveal delay={0.15}>
             <ProductCard
               name="CVBuilder"
-              tagline="Professional CV & Resume Builder"
-              description="CVBuilder helps job seekers create professional CVs and resumes in minutes. Choose from modern templates, edit your information, manage multiple CVs, and export high-quality PDFs directly from your Android device."
-              features={cvbuilderFeatures}
+              tagline="Free CV Builder & Resume Maker"
+              description="CVBuilder helps job seekers create professional CVs and resumes in minutes. Choose from modern templates, edit your information, manage multiple CVs, and export high-quality PDFs directly from your Android device."              features={cvbuilderFeatures}
               image="/images/products/cvbuilder_banner.png"
               status="Live on Google Play"
               statusColor="success"
