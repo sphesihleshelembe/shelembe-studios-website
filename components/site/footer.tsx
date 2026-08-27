@@ -44,23 +44,35 @@ export function Footer() {
               Building software that solves real problems. Founded by Sphesihle
               Shelembe. Simple, fast, reliable, beautiful, and privacy-conscious.
             </p>
-            <div className="flex gap-3 pt-2">
-              {[
-                { Icon: Github, label: 'GitHub' },
-                { Icon: Linkedin, label: 'LinkedIn' },
-                { Icon: Twitter, label: 'Twitter' },
-                { Icon: Mail, label: 'Email' },
-              ].map(({ Icon, label }) => (
-                <a
-                  key={label}
-                  href="#"
-                  aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-secondary-foreground/15 text-secondary-foreground/70 transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
+<div className="flex gap-3 pt-2">
+  <a
+    href="https://github.com/sphesihleshelembe"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="GitHub"
+    className="flex h-9 w-9 items-center justify-center rounded-lg border border-secondary-foreground/15 text-secondary-foreground/70 transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
+  >
+    <Github className="h-4 w-4" />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/sphesihle-shelembe-0a3268388/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="flex h-9 w-9 items-center justify-center rounded-lg border border-secondary-foreground/15 text-secondary-foreground/70 transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
+  >
+    <Linkedin className="h-4 w-4" />
+  </a>
+
+  <a
+    href="mailto:hello@shelembe.co.za"
+    aria-label="Email"
+    className="flex h-9 w-9 items-center justify-center rounded-lg border border-secondary-foreground/15 text-secondary-foreground/70 transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
+  >
+    <Mail className="h-4 w-4" />
+  </a>
+</div>
           </div>
 
           {Object.entries(footerLinks).map(([title, links]) => (

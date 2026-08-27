@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS contact_submissions (
   subject text,
   message text NOT NULL,
   service text,
+  budget text,
   status text NOT NULL DEFAULT 'new',
   created_at timestamptz DEFAULT now()
 );
@@ -55,3 +56,4 @@ ALTER TABLE newsletter_signups ENABLE ROW LEVEL SECURITY;
 DROP POLICY IF EXISTS "anon_insert_newsletter" ON newsletter_signups;
 CREATE POLICY "anon_insert_newsletter" ON newsletter_signups FOR INSERT
   TO anon, authenticated WITH CHECK (true);
+

@@ -4,12 +4,36 @@ import { Cpu, Zap, Eye, ShieldCheck, RefreshCw, Sparkles } from 'lucide-react';
 import { Reveal } from '@/components/site/reveal';
 
 const reasons = [
-  { icon: Cpu, title: 'Modern Technologies', desc: 'We build with the latest frameworks and tools — React, Next.js, TypeScript, React Native, and more.' },
-  { icon: Zap, title: 'Performance Focused', desc: 'Speed is a feature. Every product is optimised for fast load times and smooth interactions.' },
-  { icon: Eye, title: 'User-Centred Design', desc: 'We design from the user\u2019s perspective. Intuitive interfaces that feel natural from the first tap.' },
-  { icon: ShieldCheck, title: 'Quality Engineering', desc: 'Clean architecture, typed code, and thorough testing. Software built to last.' },
-  { icon: RefreshCw, title: 'Reliable Software', desc: 'Stable, dependable, and built for real-world conditions. Not just demos.' },
-  { icon: Sparkles, title: 'Continuous Innovation', desc: 'We never stop improving. Regular updates driven by user feedback and new ideas.' },
+  {
+    icon: Eye,
+    title: 'We Understand Your Goal',
+    desc: 'We start by understanding the problem you want to solve and the outcome you want to achieve.',
+  },
+  {
+    icon: Cpu,
+    title: 'Built for Your Business',
+    desc: 'Your software is designed around your requirements, workflow, users, and budget.',
+  },
+  {
+    icon: Zap,
+    title: 'From Idea to Product',
+    desc: 'We can take your idea from concept and planning through development and launch.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Quality You Can Trust',
+    desc: 'We focus on clean architecture, reliable functionality, security, and maintainable software.',
+  },
+  {
+    icon: RefreshCw,
+    title: 'Built to Evolve',
+    desc: 'Your software can grow with your business as your requirements and users change.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Personal Attention',
+    desc: 'Work directly with the people building your software, with clear communication throughout the project.',
+  },
 ];
 
 export function WhyChooseUs() {
@@ -20,14 +44,14 @@ export function WhyChooseUs() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="mx-auto mb-16 max-w-2xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
-            Why Choose Us
+            Working with Shelembe Studios
           </p>
           <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            What sets us apart
+            More than just development
           </h2>
           <p className="mt-4 text-lg text-secondary-foreground/70">
-            We do not just write code. We engineer software that is fast,
-            reliable, and a pleasure to use.
+            We work closely with our clients to understand their goals, build the right
+solution, and turn ideas into software that delivers real value.
           </p>
         </Reveal>
 

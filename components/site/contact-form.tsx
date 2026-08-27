@@ -1,7 +1,19 @@
+
 'use client';
 
 import { useState } from 'react';
-import { Send, Loader2, CheckCircle2, AlertCircle, Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
+import {
+  Send,
+  Loader2,
+  CheckCircle2,
+  AlertCircle,
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  MessageCircle
+} from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { Reveal } from '@/components/site/reveal';
 
@@ -16,15 +28,25 @@ const services = [
   'Not sure yet',
 ];
 
+const budgets = [
+  'Under R1,500',
+  'R1,500 – R5,000',
+  'R5,000 – R10,000',
+  'R10,000+',
+  'Not sure yet',
+];
+
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+
   const [form, setForm] = useState({
     name: '',
     email: '',
     service: services[0],
+    budget: budgets[0],
     message: '',
   });
 
@@ -34,21 +56,36 @@ export function ContactForm() {
     setErrorMsg('');
 
     try {
-      const { error } = await supabase.from('contact_submissions').insert({
-        name: form.name,
-        email: form.email,
-        service: form.service,
-        message: form.message,
-      });
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: form.name,
+          email: form.email,
+          service: form.service,
+          budget: form.budget,
+          message: form.message,
+        });
 
-      if (error) throw error;
+     if (error) {
+  console.error('SUPABASE ERROR:', error);
+  throw error;
+}
 
       setStatus('success');
-      setForm({ name: '', email: '', service: services[0], message: '' });
+
+      setForm({
+        name: '',
+        email: '',
+        service: services[0],
+        budget: budgets[0],
+        message: '',
+      });
     } catch (err) {
       setStatus('error');
       setErrorMsg(
-        err instanceof Error ? err.message : 'Something went wrong. Please try again.'
+        err instanceof Error
+          ? err.message
+          : 'Something went wrong. Please try again.'
       );
     }
   };
@@ -57,38 +94,60 @@ export function ContactForm() {
     <section id="contact" className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
-          {/* Left: info */}
+          {/* Left: information */}
           <Reveal>
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-              Get In Touch
+              Start a Project
             </p>
+
             <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
               Let&apos;s build something together
             </h2>
+
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              Whether you are looking for software development services,
-              exploring employment opportunities, or just want to talk about
-              your idea — we&apos;d love to hear from you. Fill out the form and
-              we&apos;ll respond within 48 hours.
+              Have an idea for an app, website, or custom software solution?
+              Tell us what you need and we&apos;ll help turn your idea into a
+              practical digital product.
             </p>
 
             <div className="mt-8 space-y-4">
               <ContactInfoRow
                 icon={Mail}
                 label="Email us"
-                value="hello@shelembe.co.za"
-                href="mailto:hello@shelembe.co.za"
+                value="sphesihleshelembe12@gmail.com"
+                href="mailto:sphesihleshelembe12@gmail.com"
               />
+
               <ContactInfoRow
                 icon={Phone}
                 label="Call us"
-                value="+27 11 123 4567"
-                href="tel:+27111234567"
+                value="+27 60 599 3527"
+                href="tel:+27605993527"
               />
+
+              <a
+  href="https://wa.me/27605993527?text=Hi%20Shelembe%20Studios%2C%20I%27d%20like%20to%20enquire%20about%20your%20software%20services."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block"
+>
+  <div className="flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/40">
+    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+      <MessageCircle className="h-4 w-4" />
+    </div>
+    <div>
+      <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+        WhatsApp us
+      </p>
+      <p className="text-sm font-semibold">Chat with us directly</p>
+    </div>
+  </div>
+</a>
+
               <ContactInfoRow
                 icon={MapPin}
                 label="Based in"
-                value="Johannesburg, South Africa"
+                value="South Africa"
               />
             </div>
 
@@ -97,16 +156,18 @@ export function ContactForm() {
               <p className="mb-3 text-xs font-medium uppercase tracking-wider text-muted-foreground">
                 Connect
               </p>
+
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://github.com/sphesihleshelembe"
                   aria-label="GitHub"
                   className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
                 >
                   <Github className="h-5 w-5" />
                 </a>
+
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/sphesihle-shelembe-0a3268388/?skipRedirect=true"
                   aria-label="LinkedIn"
                   className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
                 >
@@ -119,11 +180,14 @@ export function ContactForm() {
               <p className="text-sm font-medium text-muted-foreground">
                 Typical response time
               </p>
-              <p className="mt-1 text-2xl font-bold text-primary">Under 48 hours</p>
+
+              <p className="mt-1 text-2xl font-bold text-primary">
+                Under 48 hours
+              </p>
             </div>
           </Reveal>
 
-          {/* Right: form */}
+          {/* Right: quote form */}
           <Reveal delay={0.15}>
             <div className="rounded-2xl border border-border bg-card p-8 shadow-lg">
               {status === 'success' ? (
@@ -131,20 +195,26 @@ export function ContactForm() {
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-success/15">
                     <CheckCircle2 className="h-8 w-8 text-success" />
                   </div>
-                  <h3 className="mt-4 text-2xl font-bold">Message sent!</h3>
+
+                  <h3 className="mt-4 text-2xl font-bold">
+                    Quote request received!
+                  </h3>
+
                   <p className="mt-2 max-w-sm text-muted-foreground">
-                    Thanks for reaching out. We&apos;ve received your message and
-                    will be in touch within 48 hours.
+                    Thanks for reaching out. We&apos;ve received your project
+                    details and will get back to you within 48 hours.
                   </p>
+
                   <button
                     onClick={() => setStatus('idle')}
                     className="mt-6 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-muted"
                   >
-                    Send another message
+                    Send another request
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Name + email */}
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Field
                       label="Your name"
@@ -154,6 +224,7 @@ export function ContactForm() {
                       onChange={(v) => setForm({ ...form, name: v })}
                       placeholder="Jane Doe"
                     />
+
                     <Field
                       label="Email address"
                       type="email"
@@ -164,42 +235,80 @@ export function ContactForm() {
                     />
                   </div>
 
+                  {/* Service */}
                   <div>
                     <label className="mb-1.5 block text-sm font-medium">
                       What do you need?
                     </label>
+
                     <div className="flex flex-wrap gap-2">
-                      {services.map((s) => (
+                      {services.map((service) => (
                         <button
-                          key={s}
+                          key={service}
                           type="button"
-                          onClick={() => setForm({ ...form, service: s })}
+                          onClick={() =>
+                            setForm({ ...form, service })
+                          }
                           className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
-                            form.service === s
+                            form.service === service
                               ? 'bg-primary text-primary-foreground shadow-md'
                               : 'border border-border bg-background text-muted-foreground hover:border-primary/50 hover:text-foreground'
                           }`}
                         >
-                          {s}
+                          {service}
                         </button>
                       ))}
                     </div>
                   </div>
 
+                  {/* Budget */}
+                  <div>
+                    <label className="mb-1.5 block text-sm font-medium">
+                      Estimated budget
+                    </label>
+
+                    <div className="flex flex-wrap gap-2">
+                      {budgets.map((budget) => (
+                        <button
+                          key={budget}
+                          type="button"
+                          onClick={() =>
+                            setForm({ ...form, budget })
+                          }
+                          className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                            form.budget === budget
+                              ? 'bg-primary text-primary-foreground shadow-md'
+                              : 'border border-border bg-background text-muted-foreground hover:border-primary/50 hover:text-foreground'
+                          }`}
+                        >
+                          {budget}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Project details */}
                   <div>
                     <label className="mb-1.5 block text-sm font-medium">
                       Tell us about your project
                     </label>
+
                     <textarea
                       required
                       rows={5}
                       value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      placeholder="Share your vision, timeline, and any details you have..."
+                      onChange={(e) =>
+                        setForm({
+                          ...form,
+                          message: e.target.value,
+                        })
+                      }
+                      placeholder="Tell us what you want to build, what problem you want to solve, and any important details..."
                       className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     />
                   </div>
 
+                  {/* Error */}
                   {status === 'error' && (
                     <div className="flex items-center gap-2 rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
                       <AlertCircle className="h-4 w-4 shrink-0" />
@@ -207,6 +316,7 @@ export function ContactForm() {
                     </div>
                   )}
 
+                  {/* Submit */}
                   <button
                     type="submit"
                     disabled={status === 'loading'}
@@ -219,7 +329,7 @@ export function ContactForm() {
                       </>
                     ) : (
                       <>
-                        Send Message
+                        Request Free Quote
                         <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                       </>
                     )}
@@ -250,10 +360,12 @@ function ContactInfoRow({
       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
         <Icon className="h-4 w-4" />
       </div>
+
       <div>
         <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
           {label}
         </p>
+
         <p className="text-sm font-semibold">{value}</p>
       </div>
     </div>
@@ -283,6 +395,7 @@ function Field({
         {label}
         {required && <span className="text-primary"> *</span>}
       </label>
+
       <input
         type={type}
         required={required}

@@ -4,12 +4,36 @@ import { Cpu, ShieldCheck, Smartphone, Zap, Layers, Users } from 'lucide-react';
 import { Reveal } from '@/components/site/reveal';
 
 const trustPoints = [
-  { icon: Cpu, title: 'Modern Technology', desc: 'Built with the latest tools and frameworks.' },
-  { icon: ShieldCheck, title: 'Privacy Focused', desc: 'Your data stays yours. Always.' },
-  { icon: Smartphone, title: 'Cross-Platform', desc: 'Works on every device you own.' },
-  { icon: Zap, title: 'Reliable Performance', desc: 'Fast, stable, and dependable.' },
-  { icon: Layers, title: 'Designed for Productivity', desc: 'Tools that get out of your way.' },
-  { icon: Users, title: 'Built for Real Users', desc: 'Made with feedback from real people.' },
+  {
+    icon: Cpu,
+    title: 'Modern Technology',
+    desc: 'We use proven, modern technologies to build fast and maintainable software.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Security & Privacy',
+    desc: 'We take data security and privacy seriously from development to deployment.',
+  },
+  {
+    icon: Smartphone,
+    title: 'Mobile & Web',
+    desc: 'Build for Android, iOS, web, or multiple platforms from one solution.',
+  },
+  {
+    icon: Zap,
+    title: 'Performance Focused',
+    desc: 'We build responsive software that is designed to perform reliably.',
+  },
+  {
+    icon: Layers,
+    title: 'Built Around You',
+    desc: 'Your requirements come first. We build solutions around your actual workflow.',
+  },
+  {
+    icon: Users,
+    title: 'User Focused',
+    desc: 'Simple, intuitive experiences designed around the people who will use them.',
+  },
 ];
 
 export function Trust() {
@@ -17,12 +41,18 @@ export function Trust() {
     <section className="py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="mb-12 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-            Why Trust Us
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Software you can rely on
-          </h2>
+         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
+  Why Shelembe Studios
+</p>
+
+<h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+  Built around your needs
+</h2>
+
+<p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+  We combine modern technology, thoughtful design, and practical
+  problem-solving to build software that works for you and your users.
+</p>
         </Reveal>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

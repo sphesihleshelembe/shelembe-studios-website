@@ -2,7 +2,20 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Scan, FileText, QrCode, Combine, Scissors, Minimize2, Crop, Sparkles, User } from 'lucide-react';
+import {
+  ArrowRight,
+  Download,
+  Scan,
+  FileText,
+  QrCode,
+  Combine,
+  Scissors,
+  Minimize2,
+  Crop,
+  Sparkles,
+  User,
+  MessageCircle
+} from 'lucide-react';
 
 const floatingCards = [
   { icon: Scan, label: 'OCR', desc: 'Text extraction', className: 'left-0 top-8', delay: 0 },
@@ -51,40 +64,37 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="max-w-xl text-lg leading-relaxed text-secondary-foreground/70"
             >
-              Shelembe Studios builds modern software solutions that solve
-              real-world problems. From intelligent document management to
-              professional CV creation, we create applications that combine
-              powerful functionality with exceptional user experience.
+              Shelembe Studios builds modern software solutions for businesses,
+organizations, and individuals. From mobile apps and web applications
+to document management systems, we create practical software designed
+around real-world needs.
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-4"
-            >
-              <Link
-                href="/#products"
-                className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-xl shadow-primary/30 transition-all hover:shadow-2xl hover:shadow-primary/40 hover:brightness-105"
-              >
-                <Download className="h-4 w-4" />
-                Explore Our Products
-              </Link>
-              <Link
-                href="/#founder"
-                className="group inline-flex items-center gap-2 rounded-full border border-secondary-foreground/20 px-7 py-3.5 text-sm font-semibold text-secondary-foreground transition-all hover:border-accent hover:bg-accent/10"
-              >
-                <User className="h-4 w-4" />
-                Meet the Founder
-              </Link>
-              <Link
-                href="/contact"
-                className="group inline-flex items-center gap-2 rounded-full border border-secondary-foreground/20 px-7 py-3.5 text-sm font-semibold text-secondary-foreground transition-all hover:border-accent hover:bg-accent/10"
-              >
-                Contact Us
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </motion.div>
+<Link
+  href="/contact"
+  className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-xl shadow-primary/30 transition-all hover:shadow-2xl hover:shadow-primary/40 hover:brightness-105"
+>
+  <ArrowRight className="h-4 w-4" />
+  Start a Project
+</Link>
+
+<Link
+  href="/#products"
+  className="group inline-flex items-center gap-2 rounded-full border border-secondary-foreground/20 px-7 py-3.5 text-sm font-semibold text-secondary-foreground transition-all hover:border-accent hover:bg-accent/10"
+>
+  <Download className="h-4 w-4" />
+  Explore Our Products
+</Link>
+
+<a
+  href="https://wa.me/27605993527?text=Hi%20Shelembe%20Studios%2C%20I%27d%20like%20to%20enquire%20about%20your%20services."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group inline-flex items-center gap-2 rounded-full border border-secondary-foreground/20 px-7 py-3.5 text-sm font-semibold text-secondary-foreground transition-all hover:border-accent hover:bg-accent/10"
+>
+  <MessageCircle className="h-4 w-4" />
+  WhatsApp Us
+</a>
 
             <motion.div
               initial={{ opacity: 0 }}

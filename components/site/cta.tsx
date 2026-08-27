@@ -17,26 +17,30 @@ export function CTA() {
               <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl lg:text-5xl">
                 Ready to work smarter?
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-lg text-primary-foreground/80">
-                Download Noviq today or get in touch to discuss your custom
-                software project. We respond within 48 hours.
-              </p>
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-                <Link
-                  href="/#products"
-                  className="group inline-flex items-center gap-2 rounded-full bg-secondary px-7 py-3.5 text-sm font-semibold text-secondary-foreground shadow-lg transition-all hover:scale-105 hover:bg-background"
-                >
-                  <Download className="h-4 w-4" />
-                  Download Noviq
-                </Link>
-                <Link
-                  href="/contact"
-                  className="group inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary-foreground/10"
-                >
-                  Get in Touch
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-primary-foreground/80">
+  Download CVBuilder today or get in touch to discuss your custom
+  software project. We respond within 48 hours.
+</p>
+
+<div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+  <Link
+    href="https://play.google.com/store/apps/details?id=com.sphesihleshelembe.cvbuilder"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group inline-flex items-center gap-2 rounded-full bg-primary-foreground px-7 py-3.5 text-sm font-semibold text-primary transition-all hover:brightness-105"
+  >
+    <Download className="h-4 w-4" />
+    Download CVBuilder
+  </Link>
+
+  <Link
+    href="/contact"
+    className="group inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary-foreground/10"
+  >
+    Get in Touch
+    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+  </Link>
+</div>
             </div>
           </div>
         </Reveal>

@@ -67,7 +67,7 @@ export function Products() {
           <Reveal delay={0.15}>
             <ProductCard
               name="CVBuilder"
-              tagline="Free CV Builder & Resume Maker"
+              tagline="Free CV Builder & Resume Maker for Android"
               description="CVBuilder helps job seekers create professional CVs and resumes in minutes. Choose from modern templates, edit your information, manage multiple CVs, and export high-quality PDFs directly from your Android device."              features={cvbuilderFeatures}
               image="/images/products/cvbuilder_banner.png"
               status="Live on Google Play"
@@ -141,17 +141,6 @@ function ProductCard({
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
           {description}
         </p>
-        {name === "CVBuilder" && (
-  <Link
-    href="https://play.google.com/store/apps/details?id=com.sphesihleshelembe.cvbuilder"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mt-4 inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3 py-1.5 text-sm font-medium text-green-700 transition hover:bg-green-100"
-  >
-    <CheckCircle2 className="h-4 w-4" />
-    Published on Google Play
-  </Link>
-)}
 
         <div className="mt-5 grid grid-cols-2 gap-2">
           {features.map((feature) => (

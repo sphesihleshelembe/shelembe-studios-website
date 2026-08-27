@@ -1,6 +1,7 @@
 'use client';
 
-import { Scan, QrCode, Combine, Scissors, Crop, FileText, Star, Cloud, Shield, CheckCircle2, Code2, Layers } from 'lucide-react';
+import Link from 'next/link';
+import { Scan, QrCode, Combine, Scissors, Crop, FileText, Star, Cloud, Shield, CheckCircle2, Code2, Layers, ArrowRight } from 'lucide-react';
 import { Reveal } from '@/components/site/reveal';
 
 const caseStudies = [
@@ -79,16 +80,18 @@ export function Portfolio() {
     <section id="portfolio" className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="mb-16 max-w-2xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-            Portfolio
-          </p>
-          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Software case studies
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            A closer look at the products we have built — the technologies,
-            challenges, and engineering decisions behind each one.
-          </p>
+         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
+  Our Work
+</p>
+
+<h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
+  Software we&apos;ve built
+</h2>
+
+<p className="mt-4 text-lg text-muted-foreground">
+  Real products built from the ground up — demonstrating our ability to
+  turn ideas and real-world problems into practical software solutions.
+</p>
         </Reveal>
 
         <div className="space-y-12">
@@ -216,7 +219,29 @@ export function Portfolio() {
               </div>
             </Reveal>
           ))}
-        </div>
+         </div>
+
+        <Reveal className="mt-12">
+          <div className="rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center">
+            <h3 className="text-2xl font-bold">
+              Have an idea for a software product?
+            </h3>
+
+            <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
+              We can help turn your idea into a working solution. Tell us what
+              you&apos;re looking to build and we&apos;ll discuss the best way
+              forward.
+            </p>
+
+            <Link
+              href="/contact"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:brightness-105"
+            >
+              Start a Project
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

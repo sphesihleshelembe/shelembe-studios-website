@@ -27,7 +27,7 @@ const faqs = [
   {
     category: 'Support',
     question: 'How do I get support for a product?',
-    answer: 'You can reach us through our contact page or email us at hello@shelembe.co.za. We respond to all support requests within 48 hours.',
+    answer: 'You can reach us through our contact page or email us at sphesihleshelembe12@gmail.com, We respond to all support requests within 48 hours.',
   },
   {
     category: 'Services',

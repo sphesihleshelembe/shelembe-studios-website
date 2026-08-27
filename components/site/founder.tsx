@@ -75,34 +75,33 @@ export function Founder() {
 
             <Reveal delay={0.2}>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Link
-                  href="#"
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:brightness-105"
-                >
-                  <User className="h-4 w-4" />
-                  View Resume
-                </Link>
-                <Link
-                  href="#"
-                  className="inline-flex items-center gap-2 rounded-full border border-secondary-foreground/20 px-5 py-2.5 text-sm font-semibold transition-all hover:border-accent hover:bg-accent/10"
-                >
-                  <Linkedin className="h-4 w-4" />
-                  LinkedIn
-                </Link>
-                <Link
-                  href="#"
-                  className="inline-flex items-center gap-2 rounded-full border border-secondary-foreground/20 px-5 py-2.5 text-sm font-semibold transition-all hover:border-accent hover:bg-accent/10"
-                >
-                  <Github className="h-4 w-4" />
-                  GitHub
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full border border-secondary-foreground/20 px-5 py-2.5 text-sm font-semibold transition-all hover:border-accent hover:bg-accent/10"
-                >
-                  <Mail className="h-4 w-4" />
-                  Contact
-                </Link>
+      <a
+  href="https://www.linkedin.com/in/sphesihle-shelembe-0a3268388/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 rounded-full border border-secondary-foreground/20 px-5 py-2.5 text-sm font-semibold transition-all hover:border-accent hover:bg-accent/10"
+>
+  <Linkedin className="h-4 w-4" />
+  LinkedIn
+</a>
+
+<a
+  href="https://github.com/sphesihleshelembe"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 rounded-full border border-secondary-foreground/20 px-5 py-2.5 text-sm font-semibold transition-all hover:border-accent hover:bg-accent/10"
+>
+  <Github className="h-4 w-4" />
+  GitHub
+</a>
+
+<a
+  href="mailto:sphesihleshelembe12@gmail.com"
+  className="inline-flex items-center gap-2 rounded-full border border-secondary-foreground/20 px-5 py-2.5 text-sm font-semibold transition-all hover:border-accent hover:bg-accent/10"
+>
+  <Mail className="h-4 w-4" />
+  Contact
+</a>
               </div>
             </Reveal>
           </div>
