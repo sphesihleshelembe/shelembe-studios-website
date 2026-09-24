@@ -9,53 +9,61 @@ import Script from 'next/script';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://shelembe.co.za'),
-  alternates: {
-  canonical: '/',
-},
-  title: {
-    default: 'Shelembe Studios | Free CV Builder & Software Solutions',
-    template: '%s — Shelembe Studios',
-  },
-  description:
-    'Shelembe Studios builds practical software including CVBuilder, a free CV maker for creating professional CVs, plus productivity tools for students, professionals, and businesses.',
-keywords: [
-  'Shelembe Studios',
-  'CV builder',
-  'free CV builder',
-  'CV maker',
-  'free CV maker',
-  'create a CV online',
-  'professional CV builder',
-  'CV builder South Africa',
-  'CV maker South Africa',
-  'resume builder',
-  'Noviq',
-  'document scanner',
-  'productivity software',
-],
-  authors: [{ name: 'Shelembe Studios' }],
-  creator: 'Shelembe Studios',
-openGraph: {
-  title: 'Shelembe Studios | Free CV Builder & Software Solutions',
-  description:
-    'Shelembe Studios builds practical software including CVBuilder, a free CV maker for creating professional CVs, plus productivity tools for students, professionals, and businesses.',
-    url: 'https://shelembe-studios-website-16cn2zrnc.vercel.app/',
-    type: 'website',
-    locale: 'en_ZA',
-    siteName: 'Shelembe Studios',
-    images: ['/og-image.png'],
-  },
-twitter: {
-  card: 'summary_large_image',
-  title: 'Shelembe Studios | Free CV Builder & Software Solutions',
-  description:
-    'Shelembe Studios builds practical software including CVBuilder, a free CV maker for creating professional CVs, plus productivity tools for students, professionals, and businesses.',
-},
-  robots: {
-    index: true,
-    follow: true,
-  },
+    metadataBase: new URL('https://shelembe-studios-website.vercel.app'),
+
+    alternates: {
+        canonical: '/',
+    },
+
+    title: {
+        default: 'Shelembe Studios | Free CV Builder & Software Solutions',
+        template: '%s — Shelembe Studios',
+    },
+
+    description:
+        'Shelembe Studios builds practical software including CVBuilder, a free CV maker for creating professional CVs, plus productivity tools for students, professionals, and businesses.',
+
+    keywords: [
+        'Shelembe Studios',
+        'CV builder',
+        'free CV builder',
+        'CV maker',
+        'free CV maker',
+        'create a CV online',
+        'professional CV builder',
+        'CV builder South Africa',
+        'CV maker South Africa',
+        'resume builder',
+        'Noviq',
+        'document scanner',
+        'productivity software',
+    ],
+
+    authors: [{ name: 'Shelembe Studios' }],
+    creator: 'Shelembe Studios',
+
+    openGraph: {
+        title: 'Shelembe Studios | Free CV Builder & Software Solutions',
+        description:
+            'Shelembe Studios builds practical software including CVBuilder, a free CV maker for creating professional CVs, plus productivity tools for students, professionals, and businesses.',
+        url: 'https://shelembe-studios-website.vercel.app/',
+        type: 'website',
+        locale: 'en_ZA',
+        siteName: 'Shelembe Studios',
+        images: ['/og-image.png'],
+    },
+
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Shelembe Studios | Free CV Builder & Software Solutions',
+        description:
+            'Shelembe Studios builds practical software including CVBuilder, a free CV maker for creating professional CVs, plus productivity tools for students, professionals, and businesses.',
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+    },
 };
 
 export default function RootLayout({
@@ -71,19 +79,19 @@ export default function RootLayout({
     content="aAgdWKSQ1UFWKnE1yCccLSjsGI6fROlDDjUc7KmXkwk"
   />
 
-  <script
-    type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organisation',
-              name: 'Shelembe Studios',
-              description:
-  'Shelembe Studios builds practical software including CVBuilder, a free CV maker, and productivity tools for students, professionals, and businesses.',
-              url: 'https://shelembe-studios-website-16cn2zrnc.vercel.app/',
-            }),
-          }}
-        />
+              <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{
+                      __html: JSON.stringify({
+                          '@context': 'https://schema.org',
+                          '@type': 'Organization',
+                          name: 'Shelembe Studios',
+                          description:
+                              'Shelembe Studios builds practical software including CVBuilder, a free CV maker, and productivity tools for students, professionals, and businesses.',
+                          url: 'https://shelembe-studios-website.vercel.app/',
+                      }),
+                  }}
+              />
       </head>
       <body className="font-sans">
       <Script
