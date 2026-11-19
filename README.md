@@ -45,7 +45,13 @@ The website serves as the studio's digital presence, showcasing its software pro
 
 ## 📸 Screenshots
 
-Screenshots coming soon.
+<p align="center">
+  <img src="screenshots/homepage.png" width="700" alt="Shelembe Studios homepage" />
+  <img src="screenshots/about.png" width="700" alt="About Shelembe Studios" />
+  <img src="screenshots/projects.png" width="700" alt="Shelembe Studios projects" />
+  <img src="screenshots/services.png" width="700" alt="Shelembe Studios services" />
+  <img src="screenshots/contact.png" width="700" alt="Shelembe Studios contact section" />
+</p>
 
 ## 🚀 Getting Started
 
